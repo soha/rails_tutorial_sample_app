@@ -85,7 +85,7 @@ $ vi app/views/layouts/_footer.html.erb
 
 
 5.3.4
-$ touch spec/support
+$ mkdir spec/support
 $ touch spec/support/utilities.rb
 $ vi spec/support/utilities.rb
 
@@ -123,4 +123,9 @@ $ git merge filling-in-layout
 $ vi spec/requests/static_pages_spec.rb
 
 $ vi spec/requests/static_pages_spec.rb
- 
+
+$ mkdir spec/helpers
+$ touch spec/helpers/application_helper_spec.rb
+$ vi spec/helpers/application_helper_spec.rb
+
+$ vi spec/support/utilities.rb
