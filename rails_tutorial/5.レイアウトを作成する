@@ -122,4 +122,5 @@ $ git merge filling-in-layout
 5.6
 $ vi spec/requests/static_pages_spec.rb
 
+$ vi spec/requests/static_pages_spec.rb
  
