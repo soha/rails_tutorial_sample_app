@@ -1,0 +1,83 @@
+﻿3.ほぼ静的なページの作成
+
+$ cd rails_projects
+$ rails new sample_app --skip-test-unit
+$ cd sample_app
+
+$ vi Gemfile
+
+$ bundle update
+$ bundle install --without production
+
+$ rails generate rspec:install
+
+$ git init
+$ git add .
+$ git commit -m "Initial commit"
+
+$ git mv README.rdoc README.md
+$ git commit -a -m "Improve the README file"
+
+$ vi public/hello.html
+
+動作確認
+$ rails server
+
+
+$ git checkout -b static-pages
+
+$ rails generate rspec:install
+
+$ rails generate controller StaticPages home help --no-test-framework
+
+$ git add .
+$ git commit -m "Add a StaticPages controller"
+
+
+
+$ rails generate integration_test static_pages
+
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ vi spec/requests/static_pages_spec.rb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+$ vi app/views/static_pages/home.html.erb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+$ vi spec/requests/static_pages_spec.rb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+$ vi app/views/static_pages/help.html.erb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ vi spec/requests/static_pages_spec.rb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ vi config/routes.rb
+
+$ vi app/controllers/static_pages_controller.rb
+$ vi app/views/static_pages/about.html.erb
+
+
+
+3.3.1
+$ mv app/views/layouts/application.html.erb foobar
+
+$ vi spec/requests/static_pages_spec.rb
+
+$ vi app/views/static_pages/home.html.erb
+$ vi app/views/static_pages/help.html.erb
+$ vi app/views/static_pages/about.html.erb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ mv foobar app/views/layouts/application.html.erb
+$ vi app/views/layouts/application.html.erb
+
+$ vi app/views/static_pages/home.html.erb
+$ vi app/views/static_pages/help.html.erb
+$ vi app/views/static_pages/about.html.erb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ git add .
+$ git commit -m "Finish static pages"
+
+$ git checkout master
+$ git merge static-pages
