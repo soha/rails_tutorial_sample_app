@@ -1,0 +1,131 @@
+5.レイアウトを作成する
+
+5.1
+$ git checkout -b filling-in-layout
+
+$ vi app/views/layouts/application.html.erb
+
+$ vi app/views/static_pages/home.html.erb
+
+
+5.1.2
+$ vi Gemfile
+
+$ bundle install
+
+$ touch app/assets/stylesheets/custom.css.scss
+
+$ vi app/assets/stylesheets/custom.css.scss
+
+$ rails s
+
+$ vi app/assets/stylesheets/custom.css.scss
+
+$ vi app/assets/stylesheets/custom.css.scss
+
+$ vi app/assets/stylesheets/custom.css.scss
+
+
+5.1.3
+$ vi app/views/layouts/application.html.erb
+
+$ touch app/views/layouts/_shim.html.erb
+$ vi app/views/layouts/_shim.html.erb
+
+$ touch app/views/layouts/_header.html.erb
+$ vi app/views/layouts/_header.html.erb
+
+$ touch app/views/layouts/_footer.html.erb
+$ vi app/views/layouts/_footer.html.erb
+
+$ vi app/views/layouts/application.html.erb
+
+$ vi app/assets/stylesheets/custom.css.scss
+
+
+5.2
+$ vi app/assets/stylesheets/custom.css.scss
+
+
+5.3
+$ vi spec/requests/static_pages_spec.rb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ vi config/routes.rb
+
+$ vi app/controllers/static_pages_controller.rb
+
+$ touch app/views/static_pages/contact.html.erb
+
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+
+5.3.1
+$ vi spec/requests/static_pages_spec.rb
+
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+
+5.3.2
+$ vi config/routes.rb
+
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ vi config/routes.rb
+
+$ git rm public/index.html
+
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+
+5.3.3
+$ vi app/views/layouts/_header.html.erb
+
+$ vi app/views/layouts/_footer.html.erb
+
+
+5.3.4
+$ mkdir spec/support
+$ touch spec/support/utilities.rb
+$ vi spec/support/utilities.rb
+
+$ vi spec/requests/static_pages_spec.rb
+
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+
+5.4
+5.4.1
+$ rails generate controller Users new --no-test-framework
+
+$ vi app/controllers/users_controller.rb
+
+$ rails generate integration_test user_pages
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ bundle exec rspec spec/requests/user_pages_spec.rb
+
+$ vi config/routes.rb
+
+$ vi app/views/users/new.html.erb
+
+$ bundle exec rspec spec/
+
+
+$ git add .
+$ git commit -m "Finish layout and routes"
+$ git checkout master
+$ git merge filling-in-layout
+
+
+5.6
+$ vi spec/requests/static_pages_spec.rb
+
+$ vi spec/requests/static_pages_spec.rb
+
+$ mkdir spec/helpers
+$ touch spec/helpers/application_helper_spec.rb
+$ vi spec/helpers/application_helper_spec.rb
+
+$ vi spec/support/utilities.rb

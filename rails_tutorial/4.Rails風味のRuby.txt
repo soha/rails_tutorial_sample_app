@@ -1,0 +1,16 @@
+4.Rails風味のRuby
+
+4.1
+$ vi app/helpers/application_helper.rb
+
+$ vi app/views/layouts/application.html.erb
+
+$ vi spec/requests/static_pages_spec.rb
+
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ vi app/views/static_pages/home.html.erb
+$ bundle exec rspec spec/requests/static_pages_spec.rb
+
+$ git add .
+$ git commit -m "Add a full_title helper"
