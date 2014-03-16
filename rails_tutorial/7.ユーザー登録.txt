@@ -114,5 +114,10 @@ $ git merge sign-up
 $ vi config/environments/production.rb
 
 $ git commit -a -m "Add SSL in production"
+heroku側でHeroku Postgresを有効にしておく。
+$ heroku addons:add heroku-postgresql
 $ git push heroku
 $ heroku run rake db:migrate
+$ heroku open
+$ heroku logs
+
