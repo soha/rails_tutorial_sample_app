@@ -121,3 +121,19 @@ $ heroku run rake db:migrate
 $ heroku open
 $ heroku logs
 
+
+$ vi config/application.rb
+>config.assets.initialize_on_precompile = false
+https://devcenter.heroku.com/articles/getting-started-with-rails3
+
+
+7.6
+$ vi app/helpers/users_helper.rb
+
+$ vi config/locales/en.yml
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ vi app/views/layouts/application.html.erb
+
+$ bundle exec rspec spec/
