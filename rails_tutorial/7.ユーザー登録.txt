@@ -50,3 +50,56 @@ $ vi app/views/users/show.html.erb
 
 $ vi app/assets/stylesheets/custom.css.scss
 
+
+7.2
+$ bundle exec rake db:reset
+
+$ bundle exec rake db:test:prepare
+
+
+7.2.1
+$ vi spec/requests/user_pages_spec.rb
+
+$ bundle exec rspec spec/
+
+
+7.2.2
+$ vi app/views/users/new.html.erb
+
+$ bundle exec rspec spec/requests/user_pages_spec.rb -e "signup page"
+$ vi app/controllers/users_controller.rb
+
+$ bundle exec rspec spec/requests/user_pages_spec.rb -e "signup page"
+UsersControllerにcreateメソッドがないためエラー
+
+$ vi app/assets/stylesheets/custom.css.scss
+
+
+7.3.1
+$ vi app/controllers/users_controller.rb
+
+$ bundle exec rspec spec/requests/user_pages_spec.rb -e "signup with invalid information"
+
+$ vi app/views/users/new.html.erb
+
+$ mkdir app/views/shared
+$ touch app/views/shared/_error_messages.html.erb
+
+$ vi app/assets/stylesheets/custom.css.scss
+
+$ bundle exec rspec spec/requests/user_pages_spec.rb -e "signup with invalid information"
+
+
+7.4.1
+$ bundle exec rspec spec/requests/user_pages_spec.rb \ -e "signup with valid information"
+
+$ vi app/controllers/users_controller.rb
+
+$ bundle exec rspec spec/
+
+
+7.4.2
+$ vi app/views/layouts/application.html.erb
+
+$ vi app/controllers/users_controller.rb
+
