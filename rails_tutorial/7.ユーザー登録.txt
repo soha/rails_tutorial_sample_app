@@ -103,3 +103,13 @@ $ vi app/views/layouts/application.html.erb
 
 $ vi app/controllers/users_controller.rb
 
+
+7.4.4
+$ git add .
+$ git commit -m "Finish user signup"
+$ git checkout master
+$ git merge sign-up
+
+
+$ vi config/environments/production.rb
+
