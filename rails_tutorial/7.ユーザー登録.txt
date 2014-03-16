@@ -113,3 +113,6 @@ $ git merge sign-up
 
 $ vi config/environments/production.rb
 
+$ git commit -a -m "Add SSL in production"
+$ git push heroku
+$ heroku run rake db:migrate
