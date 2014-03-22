@@ -1,0 +1,146 @@
+8.サインイン、サインアウト
+
+$ git checkout -b sign-in-out
+
+8.1.1
+$ rails generate controller Sessions --no-test-framework
+$ rails generate integration_test authentication_pages
+
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ bundle exec rspec spec/
+
+$ vi config/routes.rb
+
+$ vi app/controllers/sessions_controller.rb
+
+$ touch app/views/sessions/new.html.erb
+$ vi app/views/sessions/new.html.erb
+
+$ bundle exec rspec spec/
+
+
+8.1.2
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/views/sessions/new.html.erb
+
+
+8.1.4
+$ vi app/controllers/sessions_controller.rb
+
+
+8.1.5
+$ vi app/controllers/sessions_controller.rb
+
+$ bundle exec rspec spec/requests/authentication_pages_spec.rb -e "signin with invalid information"
+
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ bundle exec rspec spec/requests/authentication_pages_spec.rb -e "signin with invalid information"
+
+$ vi app/controllers/sessions_controller.rb
+
+$ bundle exec rspec spec/requests/authentication_pages_spec.rb -e "signin with invalid information"
+
+
+8.2
+$ vi app/controllers/sessions_controller.rb
+
+
+8.2.1
+$ vi app/controllers/application_controller.rb
+
+$ vi spec/models/user_spec.rb
+
+$ rails generate migration add_remember_token_to_users
+
+$ vi db/migrate/[timestamp]_add_remember_token_to_users.rb
+
+$ bundle exec rake db:migrate
+$ bundle exec rake db:test:prepare
+
+$ bundle exec rspec spec/models/user_spec.rb
+
+$ vi spec/models/user_spec.rb
+
+$ vi app/models/user.rb
+
+$ bundle exec rspec spec/models/user_spec.rb
+
+
+8.2.2
+$ vi app/helpers/sessions_helper.rb
+
+
+8.2.3
+$ vi app/helpers/sessions_helper.rb
+
+$ vi app/helpers/sessions_helper.rb
+
+
+8.2.4
+$ vi app/helpers/sessions_helper.rb
+
+$ vi app/views/layouts/_header.html.erb
+
+$ vi app/assets/javascripts/application.js
+
+$ bundle exec rspec spec/
+
+$ rails console
+>> User.first.remember_token
+=> nil
+>> User.all.each { |user| user.save(validate: false) }
+>> User.first.remember_token
+=> "Im9P0kWtZvD0RdyiK9UHtg"
+
+
+8.2.5
+$ vi spec/requests/user_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+
+8.2.6
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/controllers/sessions_controller.rb
+
+$ vi app/helpers/sessions_helper.rb
+
+$ bundle exec rspec spec/ 
+
+
+8.3.1
+$ vi Gemfile
+
+$ bundle install
+
+$ rails generate cucumber:install
+
+
+8.3.2
+$ touch features/signing_in.feature
+$ vi features/signing_in.feature
+
+$ bundle exec cucumber features/
+
+$ touch features/step_definitions/authentication_steps.rb
+$ vi features/step_definitions/authentication_steps.rb
+
+$ bundle exec cucumber features/
+
+
+8.4
+$ git add .
+$ git commit -m "Finish sign in"
+$ git checkout master
+$ git merge sign-in-out
+
+$ git push
+$ git push heroku
+$ heroku run rake db:migrate
+
