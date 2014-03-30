@@ -31,3 +31,85 @@ $ vi spec/requests/user_pages_spec.rb
 
 $ bundle exec rspec spec/
 
+
+9.2
+9.2.1
+$ vi equests/authentication_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ bundle exec rspec spec/ 
+
+
+9.2.2
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ vi app/helpers/sessions_helper.rb
+
+$ bundle exec rspec spec/
+
+
+9.2.3
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/helpers/sessions_helper.rb
+
+$ vi app/controllers/sessions_controller.rb
+
+$ bundle exec rspec spec/
+
+
+9.3.1
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ touch app/views/users/index.html.erb
+$ vi app/views/users/index.html.erb
+
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/views/layouts/_header.html.erb
+
+$ bundle exec rspec spec/
+
+
+9.3.2
+$ vi Gemfile
+
+$ bundle install
+
+$ touch lib/tasks/sample_data.rake
+$ vi lib/tasks/sample_data.rake
+
+$ bundle exec rake db:reset
+$ bundle exec rake db:populate
+$ bundle exec rake db:test:prepare
+
+
+9.3.3
+$ vi Gemfile
+
+$ bundle install
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ vi app/views/users/index.html.erb
+
+$ bundle exec rspec spec/
+
+
+9.3.4
+$ vi app/views/users/index.html.erb
+
+$ touch app/views/users/_user.html.erb
+$ vi app/views/users/_user.html.erb
+
+$ bundle exec rspec spec/
+
