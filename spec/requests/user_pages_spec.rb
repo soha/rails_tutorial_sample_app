@@ -59,17 +59,6 @@ describe "User pages" do
         
         it { should have_link('Sign out') }
       end
-      
-
-      describe "followed by signout" do
-        before { click_link "Sign out" }
-        it { should have_link('Sign in') }
-      end
     end
   end
-  
-  describe "remember token" do
-    before { @user.save }
-    its(:remember_token) { should_not be_blank }
-  end  
 end
