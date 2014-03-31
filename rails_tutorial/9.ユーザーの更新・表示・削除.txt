@@ -113,3 +113,45 @@ $ vi app/views/users/_user.html.erb
 
 $ bundle exec rspec spec/
 
+
+9.4
+9.4.1
+$ rails generate migration add_admin_to_users admin:boolean
+
+$ vi db/migrate/[timestamp]_add_admin_to_users.rb
+
+$ bundle exec rake db:migrate
+$ bundle exec rake db:test:prepare
+
+$ bundle exec rspec spec/models/user_spec.rb
+
+$ bundle exec rake db:reset
+$ bundle exec rake db:populate
+$ bundle exec rake db:test:prepare
+
+
+9.4.2
+$ vi spec/factories.rb
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ vi app/views/users/_user.html.erb
+
+$ vi app/controllers/users_controller.rb
+
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ bundle exec rspec spec/
+
+$ git add .
+$ git commit -m "Finish user edit, update, index, and destroy actions"
+$ git checkout master
+$ git merge updating-users
+
+$ git push heroku
+$ heroku pg:reset DATABASE
+$ heroku run rake db:migrate
+$ heroku run rake db:populate
+
