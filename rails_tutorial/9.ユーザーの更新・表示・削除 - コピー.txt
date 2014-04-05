@@ -1,0 +1,157 @@
+9.ユーザーの更新・表示・削除
+
+$ git checkout -b updating-users
+
+
+9.1
+$ vi spec/requests/user_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ touch app/views/users/edit.html.erb
+$ vi app/views/users/edit.html.erb
+
+$ bundle exec rspec spec/requests/user_pages_spec.rb -e "edit page"
+
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi spec/support/utilities.rb
+
+$ vi app/views/layouts/_header.html.erb
+
+
+9.1.2
+$ vi app/controllers/users_controller.rb
+
+$ bundle exec rspec spec/
+
+
+9.1.3
+$ vi spec/requests/user_pages_spec.rb
+
+$ bundle exec rspec spec/
+
+
+9.2
+9.2.1
+$ vi equests/authentication_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ bundle exec rspec spec/ 
+
+
+9.2.2
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ vi app/helpers/sessions_helper.rb
+
+$ bundle exec rspec spec/
+
+
+9.2.3
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/helpers/sessions_helper.rb
+
+$ vi app/controllers/sessions_controller.rb
+
+$ bundle exec rspec spec/
+
+
+9.3.1
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ touch app/views/users/index.html.erb
+$ vi app/views/users/index.html.erb
+
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/views/layouts/_header.html.erb
+
+$ bundle exec rspec spec/
+
+
+9.3.2
+$ vi Gemfile
+
+$ bundle install
+
+$ touch lib/tasks/sample_data.rake
+$ vi lib/tasks/sample_data.rake
+
+$ bundle exec rake db:reset
+$ bundle exec rake db:populate
+$ bundle exec rake db:test:prepare
+
+
+9.3.3
+$ vi Gemfile
+
+$ bundle install
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ vi app/views/users/index.html.erb
+
+$ bundle exec rspec spec/
+
+
+9.3.4
+$ vi app/views/users/index.html.erb
+
+$ touch app/views/users/_user.html.erb
+$ vi app/views/users/_user.html.erb
+
+$ bundle exec rspec spec/
+
+
+9.4
+9.4.1
+$ rails generate migration add_admin_to_users admin:boolean
+
+$ vi db/migrate/[timestamp]_add_admin_to_users.rb
+
+$ bundle exec rake db:migrate
+$ bundle exec rake db:test:prepare
+
+$ bundle exec rspec spec/models/user_spec.rb
+
+$ bundle exec rake db:reset
+$ bundle exec rake db:populate
+$ bundle exec rake db:test:prepare
+
+
+9.4.2
+$ vi spec/factories.rb
+
+$ vi spec/requests/user_pages_spec.rb
+
+$ vi app/views/users/_user.html.erb
+
+$ vi app/controllers/users_controller.rb
+
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/controllers/users_controller.rb
+
+$ bundle exec rspec spec/
+
+$ git add .
+$ git commit -m "Finish user edit, update, index, and destroy actions"
+$ git checkout master
+$ git merge updating-users
+
+$ git push heroku
+$ heroku pg:reset DATABASE
+$ heroku run rake db:migrate
+$ heroku run rake db:populate
+

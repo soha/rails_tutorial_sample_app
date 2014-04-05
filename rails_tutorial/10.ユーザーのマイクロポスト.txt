@@ -1,0 +1,170 @@
+10.ユーザーのマイクロポスト
+
+$ git checkout -b user-microposts
+
+
+10.1.1
+$ rails generate model Micropost content:string user_id:integer
+
+$ vi db/migrate/[timestamp]_create_microposts.rb
+
+$ vi spec/models/micropost_spec.rb
+
+$ bundle exec rake db:migrate
+$ bundle exec rake db:test:prepare
+
+$ bundle exec rspec spec/models/micropost_spec.rb
+
+
+10.1.2
+$ vi spec/models/micropost_spec.rb
+
+$ vi app/models/micropost.rb
+
+
+10.1.3
+$ vi spec/models/micropost_spec.rb
+
+$ vi config/application.rb
+
+$ vi app/models/micropost.rb
+
+$ vi spec/models/micropost_spec.rb
+
+$ vi spec/models/user_spec.rb
+
+$ vi app/models/micropost.rb
+
+$ vi app/models/user.rb
+
+$ bundle exec rspec spec/models
+
+
+10.1.4
+$ vi spec/factories.rb
+
+$ vi spec/models/user_spec.rb
+
+$ vi app/models/micropost.rb
+
+$ vi spec/models/user_spec.rb
+
+$ vi app/models/user.rb
+
+$ bundle exec rspec spec/
+
+
+10.1.5
+$ vi spec/models/micropost_spec.rb
+
+$ vi app/models/micropost.rb
+
+
+10.2
+10.2.1
+$ vi spec/requests/user_pages_spec.rb
+
+$ vi app/views/users/show.html.erb
+
+$ touch app/views/microposts/_micropost.html.erb
+$ vi app/views/microposts/_micropost.html.erb
+
+$ vi app/controllers/users_controller.rb
+
+
+10.2.2
+$ vi lib/tasks/sample_data.rake
+
+$ bundle exec rake db:reset
+$ bundle exec rake db:populate
+$ bundle exec rake db:test:prepare
+
+$ vi app/assets/stylesheets/custom.css.scss
+
+
+10.3
+$ vi config/routes.rb
+
+
+10.3.1
+$ vi spec/requests/authentication_pages_spec.rb
+
+$ vi app/helpers/sessions_helper.rb
+
+$ vi app/controllers/microposts_controller.rb
+
+$ touch app/controllers/microposts_controller.rb
+$ vi app/controllers/microposts_controller.rb
+
+$ bundle exec rspec spec/requests/authentication_pages_spec.rb
+
+
+10.3.2
+$ rails generate integration_test micropost_pages
+
+$ vi spec/requests/micropost_pages_spec.rb
+
+$ vi app/controllers/microposts_controller.rb
+
+$ vi app/views/static_pages/home.html.erb
+
+$ touch app/views/shared/_user_info.html.erb
+$ vi app/views/shared/_user_info.html.erb
+
+$ touch app/views/shared/_micropost_form.html.erb
+$ vi app/views/shared/_micropost_form.html.erb
+
+$ vi app/controllers/static_pages_controller.rb
+
+$ vi app/views/shared/_error_messages.html.erb
+
+$ bundle exec rspec spec/requests/micropost_pages_spec.rb
+
+$ vi app/views/users/new.html.erb
+
+$ vi app/views/users/edit.html.erb
+
+$ bundle exec rspec spec/
+
+
+10.3.3
+$ vi spec/models/user_spec.rb
+
+$ vi app/models/user.rb
+
+$ vi spec/requests/static_pages_spec.rb
+
+$ vi app/controllers/static_pages_controller.rb
+
+$ touch app/views/shared/_feed.html.erb
+$ vi app/views/shared/_feed.html.erb
+
+$ touch app/views/shared/_feed_item.html.erb
+$ vi app/views/shared/_feed_item.html.erb
+
+$ vi app/views/static_pages/home.html.erb
+
+$ vi app/controllers/microposts_controller.rb
+
+$ bundle exec rspec spec/
+
+
+10.3.4
+$ vi app/views/microposts/_micropost.html.erb
+
+$ vi app/views/shared/_feed_item.html.erb
+
+$ vi spec/requests/micropost_pages_spec.rb
+
+$ vi app/controllers/microposts_controller.rb
+
+$ bundle exec rspec spec/
+
+
+10.4
+$ git add .
+$ git commit -m "Add user microposts"
+$ git checkout master
+$ git merge user-microposts
+$ git push
+
